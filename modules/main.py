@@ -154,6 +154,10 @@ async def account_login(bot: Client, m: Message):
                 id =  url.split("/")[-2]
                 url = f"https://penpencilvod.pc.cdn.bitgravity.com/{id}/master.m3u8"
 
+            elif 'iframe.mediadelivery.net/' in url
+                id = url.split("/")[-2]
+                url = f"https://iframe.mediadelivery.net/{id}/video.drm?contextId={id}"
+
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
             name = f'{str(count).zfill(3)}) {name1[:60]}'
 
